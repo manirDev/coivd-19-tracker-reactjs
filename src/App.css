@@ -13,34 +13,46 @@ body{
   align-items: center;
   margin-bottom: 20px;
 }
-.app{
-  margin-top: 2%;
+.app_main{
+  
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .app_stats{
   display: flex;
   justify-content: space-between;
 }
-.app_left{
-  flex:0.8;
+.app_main .app_left{
+  flex:0.9;
 }
-.infected{
+/*.infected{
   border-bottom: 10px solid rgba(0,0,255,0.5);
   border-radius: 2px;
   cursor: pointer !important;
+  background-color: rgba(102, 179, 255, 0.5) !important;
 }
 .recovered{
   border-bottom: 10px solid rgba(0,255,0,0.5);
   border-radius: 2px;
   cursor: pointer !important;
+  background-color: rgba(191, 242, 202, 0.5) !important;
 }
 .death{
   border-bottom: 10px solid rgba(255,0,0,0.5);
   border-radius: 2px;
   cursor: pointer !important;
+  background-color: rgba(237, 178, 178, 0.5) !important;
 }
-.appbar{
+.activecases {
+  background-color: rgba(237, 199, 152, 0.5) !important;
+  border-radius: 2px;
+  cursor: pointer !important;
+  border-bottom: 10px solid rgba(242, 234, 0, 0.5);
+}*/
+.app{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
   margin-bottom: 0px ;
 }
 .app__information > h3 {
@@ -54,7 +66,15 @@ body{
   margin-top: 1rem;
 }
 @media (max-width: 990px){
-  .app {
+  .app_stats{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .app_stats:not(:last-child){
+    margin-bottom: 15px;
+  }
+  .app_main {
     flex-direction: column;
     margin:20px;
   }
@@ -71,10 +91,15 @@ body{
   .app_dropdown{
     margin-top: 15px;
   }
-  .infected, .recovered,.death{
-    margin-right: 10px;
-  }
-  .logo{
+  .infected, .recovered,.deaths{
     margin-bottom: 15px;
+  }
+  .logo, h4{
+    margin-bottom: 15px;
+  }
+}
+@media (min-witdh:990px){
+  .infected, .recovered,.deaths{
+    margin-right: 15px;
   }
 }

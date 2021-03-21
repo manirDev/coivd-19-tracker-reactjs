@@ -9,6 +9,7 @@ import LineGraph  from './components/Linegraph'
 import 'leaflet/dist/leaflet.css'
 import image from './components/Image/image.png'
 import numeral from "numeral";
+import Footer from './components/Footer'
 function App() {
   //state is how to write vvarible in ract
   const [countries, setCountries] = useState([]);
@@ -18,7 +19,7 @@ function App() {
   const [casesType, setCasesType] = useState("cases");
   const [mapCountries, setMapCountries] = useState([]);
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
-  const [mapZoom, setMapZoom] = useState(3)
+  const [mapZoom, setMapZoom] = useState(4)
   //https://disease.sh/v3/covid-19/countries
 //useEffect runs a piece o code
 useEffect(() => {
@@ -65,15 +66,17 @@ const countryChange = async (event) => {
     //all  data from ccountry response
     setCountryInfo(data);
     setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-    setMapZoom(4);
+    setMapZoom(3);
   } )
 };
 
   return (
     <div className="app">
+      <div className="app_main">
       <div className="app_left">
       <div className="app_header">
       <img className="logo" src={image} alt="COVID-19" />
+      <h4>Global and Country Wise Cases of Corona Virus</h4>
         <FormControl className="app_dropdown">
           <Select  variant ="outlined" onChange={countryChange} value={country} >
           <MenuItem value="worldwide" >Global</MenuItem>
@@ -92,38 +95,64 @@ const countryChange = async (event) => {
       {/*title+select input dropdown field */}
       <div className="app_stats">
           {/*infoboxes corona virus cases*/}
-         <div className="infected">
-         <InfoBox 
+        
+        <div className="infected">
+        <InfoBox 
           onClick={(event) => setCasesType("cases")}
           title="Infected" 
+          isBlue
+          active={casesType === "cases"}
           total={numeral(countryInfo.cases).format("0.0a")}
           cases={prettyPrintStat(countryInfo.todayCases)}
           lastUpdate={(countryInfo.updated)}
-          footer="Number of active cases from COVID-19."
+         
           />
-         </div>
+        </div>
+         
           {/*infoboxes corona virus recovery */}
-          <div className="recovered">
-          <InfoBox  
+          
+         <div className="recovered">
+         <InfoBox  
           onClick={(e) =>setCasesType("recovered")}
           title="Recovered" 
+          isGreen
+          active={casesType === "recovered"}
           total={numeral(countryInfo.recovered).format("0.0a")}
           cases={prettyPrintStat(countryInfo.todayRecovered)}
           lastUpdate={(countryInfo.updated)}
-          footer="Number of recoveries from COVID-19."
+          
          / >
-          </div>
+         </div>
+         
           {/*infoboxes  corovirus deaths*/}
-          <div className="death">
+          
+          <div className="deaths">
           <InfoBox 
           onClick={(e) => setCasesType("deaths")}
           title="Deaths"
+          isRed
+          active={casesType === "deaths"}
           total={numeral(countryInfo.deaths).format("0.0a")}
           cases={prettyPrintStat(countryInfo.todayDeaths)}
           lastUpdate={countryInfo.updated}
-          footer="Number of deaths caused by COVID-19."
+          
            />
           </div>
+          
+          <div className="activecases">
+            
+          <InfoBox 
+          onClick={(event) => setCasesType("cases")}
+          title="Active" 
+          isYellow
+          active={casesType === "Active"}
+          total={numeral(countryInfo.active).format("0.0a")}
+          cases={prettyPrintStat(countryInfo.activePerOneMillion)}
+          lastUpdate={(countryInfo.updated)}
+         
+          />
+          </div>
+         
       </div>
       {/*Map */}
       <CovidMap 
@@ -143,7 +172,8 @@ const countryChange = async (event) => {
           </div>
         </CardContent>
       </Card>
-        
+      </div>
+        <Footer/>
     </div>
     
   );
