@@ -25,10 +25,10 @@ https://covid-tracker-a16d9.web.app/
 
 # ScreenShhots
 
-![covid1](https://user-images.githubusercontent.com/42040735/111901831-4b926e00-8a4b-11eb-9fda-3193e01ba354.png)
+![covid191](https://user-images.githubusercontent.com/42040735/111909639-2dd70000-8a6f-11eb-9ac2-0eeed0f8b75f.png)
 
-![covid2](https://user-images.githubusercontent.com/42040735/111901832-4d5c3180-8a4b-11eb-84ef-7d1f1c93ca40.png)
-![covid3](https://user-images.githubusercontent.com/42040735/111901833-4df4c800-8a4b-11eb-8688-4858bc50df6c.png)
+![covid1992](https://user-images.githubusercontent.com/42040735/111909644-2f082d00-8a6f-11eb-8e3e-e420df80f77e.png)
+![covid193](https://user-images.githubusercontent.com/42040735/111909643-2f082d00-8a6f-11eb-864d-d35997eda982.png)
 
 
 
