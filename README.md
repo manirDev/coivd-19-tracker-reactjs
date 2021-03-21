@@ -1,5 +1,5 @@
 # covid-19-tracker-reactjs
-Airbnb clone is  a Simple WEB UI Clone made by ReactJS. This version is still very basic, so many of the functionalities have not been added yet.
+This coivd-19-tracker  shows the numbers, the map, live show cases and trends  of people affected, recovered and deceased due to COVID-19.
 
 ## Usage
 
