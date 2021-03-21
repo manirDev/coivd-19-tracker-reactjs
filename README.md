@@ -28,7 +28,6 @@ https://covid-tracker-a16d9.web.app/
 ![covid1](https://user-images.githubusercontent.com/42040735/111901831-4b926e00-8a4b-11eb-9fda-3193e01ba354.png)
 
 ![covid2](https://user-images.githubusercontent.com/42040735/111901832-4d5c3180-8a4b-11eb-84ef-7d1f1c93ca40.png)
-
 ![covid3](https://user-images.githubusercontent.com/42040735/111901833-4df4c800-8a4b-11eb-8688-4858bc50df6c.png)
 
 
