@@ -1,10 +1,17 @@
 import React from 'react'
 import './InfoBox.css'
 import { Card, CardContent, Typography } from '@material-ui/core'
-function InfoBox({title,total,cases,lastUpdate, footer, ...props }) {
+import { Info } from '@material-ui/icons'
+function InfoBox({title,total,cases,lastUpdate, active,isYellow,isBlue, isRed,isGreen,  ...props }) {
     return (
-        <Card onClick={props.onClick} classes="infobox">
-            <CardContent>
+        <Card onClick={props.onClick}
+        className={`infoBox ${active && "infoBox--blue"} ${isBlue && "infobox--blue"}
+        ${isGreen && " InfoBox--green"} 
+        ${
+            isRed && "infoBox--red" 
+          }
+        ${isYellow && "infobox--yellow"}`}>
+            <CardContent className="box_content">
                 {/*title */}
                 <Typography className="infobox_title" color="textSecondary">{title}</Typography>
                 {/*cases */}
@@ -12,7 +19,7 @@ function InfoBox({title,total,cases,lastUpdate, footer, ...props }) {
                 <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                 {/*total */}
                 <Typography className="infobox_total" color="textSecondary">{total} Total</Typography>
-                <small>{footer}</small>
+                
             </CardContent>
         </Card>
     )
