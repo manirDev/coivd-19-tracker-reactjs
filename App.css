@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+ 
+}
+body{
+ background-color: gainsboro;
+
+}
+.app_header{
+  display: flex;/*just this it won't be space between children*/
+  /*flex-direction: column;*/
+  justify-content: space-between;/*for children*/
+  align-items: center;
+  margin-bottom: 20px;
+}
+.app_main{
+  
+  display: flex;
+  justify-content: space-between;
+}
+.app_stats{
+  display: flex;
+  justify-content: space-between;
+}
+.app_main .app_left{
+  flex:0.9;
+}
+/*.infected{
+  border-bottom: 10px solid rgba(0,0,255,0.5);
+  border-radius: 2px;
+  cursor: pointer !important;
+  background-color: rgba(102, 179, 255, 0.5) !important;
+}
+.recovered{
+  border-bottom: 10px solid rgba(0,255,0,0.5);
+  border-radius: 2px;
+  cursor: pointer !important;
+  background-color: rgba(191, 242, 202, 0.5) !important;
+}
+.death{
+  border-bottom: 10px solid rgba(255,0,0,0.5);
+  border-radius: 2px;
+  cursor: pointer !important;
+  background-color: rgba(237, 178, 178, 0.5) !important;
+}
+.activecases {
+  background-color: rgba(237, 199, 152, 0.5) !important;
+  border-radius: 2px;
+  cursor: pointer !important;
+  border-bottom: 10px solid rgba(242, 234, 0, 0.5);
+}*/
+.app{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 0px ;
+}
+.app__information > h3 {
+  color: #6a5d5d;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app__information > h3:last-of-type {
+  margin-top: 1rem;
+}
+@media (max-width: 990px){
+  .app_stats{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .app_stats:not(:last-child){
+    margin-bottom: 15px;
+  }
+  .app_main {
+    flex-direction: column;
+    margin:20px;
+  }
+  .app_left{
+    margin-bottom: 20px;
+  }
+  .app_header{
+    display: flex;/*just this it won't be space between children*/
+    flex-direction: column;
+   /* justify-content: space-evenly;*//*for children*/
+    align-items: center;
+    
+  }
+  .app_dropdown{
+    margin-top: 15px;
+  }
+  .infected, .recovered,.deaths{
+    margin-bottom: 15px;
+  }
+  .logo, h4{
+    margin-bottom: 15px;
+  }
+}
+@media (min-witdh:990px){
+  .infected, .recovered,.deaths{
+    margin-right: 15px;
+  }
+}
