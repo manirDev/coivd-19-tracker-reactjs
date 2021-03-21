@@ -1,0 +1,47 @@
+.infobox{
+    flex: 1;
+    
+}
+.infobox:hover{
+    cursor: pointer !important;
+}
+
+.infobox:not(:last-child){
+    margin-right: 15px;
+}
+.infobox_cases{
+    color: #cc1034;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.infobox_total{
+    color: #6c757d;
+    font-weight: 700 !important;
+font-size: 1.8rem !important;
+    margin-bottom: 15px !important;
+}
+
+@media (max-width:990px){
+  
+    .infobox_cases{
+        color: #cc1034;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+    .infobox_total{
+        color: #6c757d;
+        font-weight: 500 !important;
+    font-size: 1.4rem !important;
+        margin-bottom: 10px !important;
+    }
+}
+@media(max-width:750px){
+    .infobox{
+        flex: content;
+    }
+    .infobox:not(:last-child){
+        margin-right: 15px;
+    }
+}
